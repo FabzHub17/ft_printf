@@ -14,24 +14,22 @@ int ft_printf(const char *format, ...)
         if(format[i] == '%')
         {
             i++;
-            print_arg(format[i], args, &count);
+            count += print_arg(format[i], args);
         }
         else
-        {
-            ft_putchar(format[i]);   // should change it my function later on.
-            count++; 
-        }
+            count += ft_putchar(format[i]);
+        i++;
     }
     var_end(args);
     return (count);
 }
 
-void print_arg(int c, va_list args, int *count)
+int print_arg(int c, va_list args)
 {
     if ( c == 'c')
-        return;
+        return (ft_putchar(va_arg(args, int)));
     else if (c == 's')
-        return;
+        return (ft_putstr(va_arg(args, char *)));
     else if (c == 'p')
         return;
     else if (c == 'd' || c == 'i')
@@ -45,5 +43,5 @@ void print_arg(int c, va_list args, int *count)
     else if (c == '%')
         return;
     else
-        return;
+        return(0);
 }
