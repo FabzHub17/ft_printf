@@ -17,4 +17,10 @@
 # include "./libft/libft.h"
 
 int ft_printf(const char *format, ...);
+int ft_putchar(char c);
+int ft_putstr(char *str);
+int ft_puthex(unsigned int n, char c);
+int ft_putnbr(int n);
+int ft_putptr(void *ptr);
+int ft_printf_ptr(unsigned long long ptr);
 #endif

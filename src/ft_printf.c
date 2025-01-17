@@ -43,9 +43,9 @@ int print_arg(int c, va_list args)
     else if (c == 's')
         return (ft_putstr(va_arg(args, char *)));
     else if (c == 'p')
-        return;
+        return(ft_putptr(va_arg(args, void *)));
     else if (c == 'd' || c == 'i')
-        return;
+        return(ft_putint(va_arg(args, int)));
     else if (c == 'u')
         return;
     else if (c == 'x')
