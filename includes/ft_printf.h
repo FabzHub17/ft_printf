@@ -23,4 +23,5 @@ int ft_puthex(unsigned int n, char c);
 int ft_putnbr(int n);
 int ft_putptr(void *ptr);
 int ft_printf_ptr(unsigned long long ptr);
+int ft_putint(int n);
 #endif
