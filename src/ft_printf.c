@@ -12,6 +12,8 @@
 
 #include "../includes/ft_printf.h"
 
+int ft_printf_arg(int c, va_list args);
+
 int ft_printf(const char *format, ...)
 {
     int i;
@@ -32,7 +34,7 @@ int ft_printf(const char *format, ...)
             count += ft_putchar(format[i]);
         i++;
     }
-    var_end(args);
+    va_end(args);
     return (count);
 }
 

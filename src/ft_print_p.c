@@ -1,5 +1,7 @@
 #include "../includes/ft_printf.h"
 
+int ft_printf_ptr(unsigned long long ptr);
+
 int ft_putptr(void *ptr)
 {
     unsigned long long mem_address;
@@ -13,7 +15,7 @@ int ft_putptr(void *ptr)
     }
     mem_address = (unsigned long long) ptr;
     len += ft_putstr("0x");
-    len += ft_printf_ptr((unsigned long long) ptr);
+    len += ft_printf_ptr(mem_address);
     return(len);
 }
 
