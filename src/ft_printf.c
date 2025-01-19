@@ -26,7 +26,7 @@ int ft_printf(const char *format, ...)
         if(format[i] == '%')
         {
             i++;
-            count += print_arg(format[i], args);
+            count += ft_printf_arg(format[i], args);
         }
         else
             count += ft_putchar(format[i]);
@@ -36,7 +36,7 @@ int ft_printf(const char *format, ...)
     return (count);
 }
 
-int print_arg(int c, va_list args)
+int ft_printf_arg(int c, va_list args)
 {
     if ( c == 'c')
         return (ft_putchar(va_arg(args, int)));
@@ -47,13 +47,11 @@ int print_arg(int c, va_list args)
     else if (c == 'd' || c == 'i')
         return(ft_putint(va_arg(args, int)));
     else if (c == 'u')
-        return;
-    else if (c == 'x')
-        return;
-    else if (c == 'X')
-        return;
+        return (ft_putint(va_arg(args, unsigned int)));
+    else if (c == 'x' || c == 'X')
+        return(ft_puthex(va_arg(args,unsigned int),c));
     else if (c == '%')
-        return;
+        return(ft_putchar('%'));
     else
         return(0);
 }

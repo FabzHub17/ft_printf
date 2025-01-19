@@ -27,19 +27,5 @@ int ft_putstr(char *str)
     return(len);
 }
 
-int ft_puthex(unsigned int n, char c)
-{
-    int len;
-
-    len = 0;
-    if (n >= 16)
-    {
-        len += ft_puthex(n / 16, c);
-        len += ft_putchar(n % 16 + c);
-    }
-    else
-        len += ft_putchar(n + c);
-    return(len);
-}
 
 
