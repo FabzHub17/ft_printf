@@ -12,20 +12,17 @@
 
 #include "../includes/ft_printf.h"
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
-    ft_putchar_fd(c, 1);
-    return(1);
+	ft_putchar_fd(c, 1);
+	return (1);
 }
 
-int ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
-    int len;
+	int	len;
 
-    ft_putstr_fd(str, 1);
-    len = ft_strlen(str);
-    return(len);
+	ft_putstr_fd(str, 1);
+	len = ft_strlen(str);
+	return (len);
 }
-
-
-
