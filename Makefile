@@ -17,7 +17,7 @@ RM	= rm -f
 CFLAGS	= -Wall -Werror -Wextra
 
 SRC	= ./src/ft_print_hex.c ./src/ft_print_int.c ./src/ft_print_p.c \
-	  ./src/ft_printf.c ./src/ft_printf_utils.c
+	  ./src/ft_printf.c ./src/ft_printf_utils.c ./src/ft_print_u.c
 
 OBJS	= $(SRC:.c=.o)
 

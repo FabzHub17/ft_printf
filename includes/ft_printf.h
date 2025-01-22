@@ -24,4 +24,6 @@ int ft_putstr(char *str);
 int ft_putptr(void *ptr);
 int ft_putint(int num);
 int ft_puthex(unsigned int num, char c);
+
+int ft_put_u(unsigned int num)
 #endif
