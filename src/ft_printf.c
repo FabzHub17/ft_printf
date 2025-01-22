@@ -49,7 +49,7 @@ int ft_printf_arg(int c, va_list args)
     else if (c == 'd' || c == 'i')
         return(ft_putint(va_arg(args, int)));
     else if (c == 'u')
-        return (ft_putint(va_arg(args, unsigned int)));
+        return (ft_put_u(va_arg(args, unsigned int)));
     else if (c == 'x' || c == 'X')
         return(ft_puthex(va_arg(args,unsigned int),c));
     else if (c == '%')
