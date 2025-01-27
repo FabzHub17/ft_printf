@@ -15,14 +15,22 @@ CC	= cc
 AR	= ar rcs
 RM	= rm -f
 CFLAGS	= -Wall -Werror -Wextra
+CP			= cp
 
 SRC	= ./src/ft_print_hex.c ./src/ft_print_int.c ./src/ft_print_p.c \
 	  ./src/ft_printf.c ./src/ft_printf_utils.c ./src/ft_print_u.c
 
 OBJS	= $(SRC:.c=.o)
 
-$(NAME): $(OBJS)
-		$(AR) $@ $^
+LIBFT		= ./includes/libft/libft.a
+LIBFTDIR	= ./includes/libft
+
+$(NAME):	$(LIBFT) $(OBJS)
+				$(CP) $(LIBFT) $(NAME)
+				@$(AR) $(NAME) $(OBJS)
+
+$(LIBFT):	$(LIBFTDIR)
+				@$(MAKE) -C $(LIBFTDIR)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -30,10 +38,12 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS)
+			@$(MAKE) clean -C $(LIBFTDIR)
+			@$(RM) $(OBJS)
 
-fclean: clean
-	$(RM) $(NAME)
+fclean:		clean
+				@$(MAKE) fclean -C $(LIBFTDIR)
+				@$(RM) $(NAME)s
 
 re: fclean all
 
