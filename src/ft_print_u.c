@@ -12,13 +12,13 @@
 
 #include "../includes/ft_printf.h"
 
-int	ft_put_u(unsigned int num)
+int ft_put_u(unsigned int n)
 {
-	int		len;
-	char	*str;
-
-	str = ft_itoa(num);
-	len = ft_putstr(str);
-	free(str);
-	return (len);
+    int len;
+    
+    len = 0;
+    if (n >= 10)
+        len += ft_put_u(n / 10);
+    len += ft_putchar((n % 10) + '0');
+    return (len);
 }
