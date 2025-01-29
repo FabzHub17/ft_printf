@@ -21,10 +21,10 @@ int	ft_putchar(char c)
 int	ft_putstr(char *str)
 {
 	int	len;
-	
+
 	if (!str)
 	{
-		write (1, "(null)", 6);
+		write(1, "(null)", 6);
 		return (6);
 	}
 	len = ft_strlen(str);
